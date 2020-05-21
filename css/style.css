@@ -1,0 +1,156 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    /*position: absolute;*/
+    width: 100%;
+    margin: 0;
+    padding: 0 ;
+}
+
+.container_menu .menu_container .input {
+    display: none;
+}
+
+.container_menu .menu_container {
+    width: 100%;
+    height: 120px;
+}
+
+.container_menu .menu_container .botton {
+    width: 60px;
+    height: 60px;
+    margin: 25px;
+    padding: 25px;
+    background-color: #000;
+    display: block;
+    position: relative
+}
+
+.container_menu .menu_container .botton .line1, .line2, .line3 {
+    width: 50px;
+    height: 4px;
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateX(-50% -50%);
+    background: #fff;
+    transition: all 1s ease;
+}
+
+.container_menu .menu_container .botton .line2 {
+    top: 30%;
+}
+
+.container_menu .menu_container .botton .line3 {
+    top: 70%;
+}
+
+#btn-menu:checked ~ .botton .line2 {
+    transform: rotate(35deg);
+    top: 30px;
+    left: 5px;
+}
+
+
+#btn-menu:checked ~ .botton .line3 {
+    transform: rotate(-35deg);
+    /*top: 35px;
+    left: 5px;*/
+}
+
+.container_menu .menu_container .menu {
+    width: 90%;
+    line-height: 120px;
+    position: absolute;
+    top: 0;
+    left: 5%
+}
+
+.container_menu .menu_container ul li {
+    padding-right: 25px;
+}
+
+.container_menu .menu_container ul {
+    width: 100%;
+    height: auto;
+    list-style: none;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.container_menu .menu_container ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+
+
+
+
+
+/***** Filtro de Imagenes *****/
+
+main .filtro_container .container_picture {
+    width: 100%;
+    height: auto;
+
+}
+
+main .filtro_container .container_picture h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    text-transform: capitalize;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main .filtro_container .container_picture #container {
+    width: 80%;
+    height: auto;
+    margin-right: auto;
+    margin-left:auto ;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main .filtro_container .container_picture #container div {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border: 2px solid #000;
+    margin-bottom: 10px;
+}
+
+main .filtro_container .container_picture #container div img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+#audi:checked ~ #container .laptop, #audi:checked ~ #container .movil, #audi:checked ~ #container .pc {
+    display: none;
+}
+
+#laptop:checked ~ #container .audi, #audi:checked ~ #container .movil, #audi:checked ~ #container .pc {
+    display: none;
+}
+
+#movil:checked ~ #container .audi, #audi:checked ~ #container .laptop, #audi:pc ~ #container .pc {
+    display: none;
+
+}
+#pc:checked ~ #container .audi, #audi:checked ~ #container .laptop, #audi:pc ~ #container .movil {
+    display: none;
+}
