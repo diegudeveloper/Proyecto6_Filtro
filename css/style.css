@@ -15,6 +15,8 @@ header {
     display: none;
 }
 
+
+
 .container_menu .menu_container {
     width: 100%;
     height: 120px;
@@ -27,7 +29,8 @@ header {
     padding: 25px;
     background-color: #000;
     display: block;
-    position: relative
+    position: relative;
+    display: none;
 }
 
 .container_menu .menu_container .botton .line1, .line2, .line3 {
@@ -49,17 +52,21 @@ header {
     top: 70%;
 }
 
+#btn-menu:checked ~ .botton .line1 {
+    display: none;
+}
+
 #btn-menu:checked ~ .botton .line2 {
-    transform: rotate(35deg);
+    transform: rotate(225deg);
     top: 30px;
     left: 5px;
 }
 
 
 #btn-menu:checked ~ .botton .line3 {
-    transform: rotate(-35deg);
-    /*top: 35px;
-    left: 5px;*/
+    transform: rotate(-225deg);
+    top: 30px;
+    
 }
 
 .container_menu .menu_container .menu {
@@ -67,7 +74,7 @@ header {
     line-height: 120px;
     position: absolute;
     top: 0;
-    left: 5%
+    left: 5%;
 }
 
 .container_menu .menu_container ul li {
@@ -91,11 +98,25 @@ header {
 }
 
 
+#btn-menu:checked ~ .menu {
+    transform: translateX(0)
+}
+
+
+
+
 
 
 
 
 /***** Filtro de Imagenes *****/
+
+main .filtro_container .container_picture input {
+    margin-top: 50px;
+    margin-left: 5%;
+    margin-bottom: 50px;
+}
+
 
 main .filtro_container .container_picture {
     width: 100%;
@@ -125,10 +146,10 @@ main .filtro_container .container_picture #container {
 
 main .filtro_container .container_picture #container div {
     width: 250px;
-    height: 250px;
+    height: 150px;
     overflow: hidden;
-    border: 2px solid #000;
     margin-bottom: 10px;
+    transition: all 1s ease;
 }
 
 main .filtro_container .container_picture #container div img {
@@ -136,21 +157,88 @@ main .filtro_container .container_picture #container div img {
     max-width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 3px;
 }
 
+#Todo:checked ~ #container .audi, .laptop, .movil .pc, .animate_animated {
+    animation-duration: 5s;
+}
 
 #audi:checked ~ #container .laptop, #audi:checked ~ #container .movil, #audi:checked ~ #container .pc {
     display: none;
+    
 }
 
-#laptop:checked ~ #container .audi, #audi:checked ~ #container .movil, #audi:checked ~ #container .pc {
+#audi:checked ~ #container .animate_animated {
+    animation-duration: 5s;
+}
+
+
+
+#laptop:checked ~ #container .audi, #laptop:checked ~ #container .movil, #laptop:checked ~ #container .pc {
+    display: none;
+    
+}
+
+#laptop:checked ~ #container .animate_animated {
+    animation-duration: 5s;
+}
+
+#movil:checked ~ #container .audi, #movil:checked ~ #container .laptop, #movil:checked ~ #container .pc {
+    display: none;
+
+}
+
+#movil:checked ~ #container .animate_animated {
+    animation-duration: 5s;
+}
+
+#pc:checked ~ #container .audi, #pc:checked ~ #container .laptop, #pc:checked ~ #container .movil {
     display: none;
 }
 
-#movil:checked ~ #container .audi, #audi:checked ~ #container .laptop, #audi:pc ~ #container .pc {
-    display: none;
-
+#pc:checked ~ #container .animate_animated {
+    animation-duration: 5s;
 }
-#pc:checked ~ #container .audi, #audi:checked ~ #container .laptop, #audi:pc ~ #container .movil {
-    display: none;
+
+
+
+/*****media queri*****/
+
+@media screen and (max-width: 650px) {
+
+    .container_menu .menu_container .botton {
+        display: inline-block;
+    }
+
+    main .filtro_container .container_picture input {
+        margin-top: 30px;
+        margin-left: 10px;
+        margin-bottom: 30px;
+    }
+
+    .container_menu .menu_container .menu {
+        width: 100%;
+        height: 100vh;
+        left: 0;
+        background-color: #c2c2c2;
+        z-index: 100;
+        top: 120px;
+        line-height: 70px;
+
+        transform: translateX(-100%);
+        transition: all 1s ease-in-out;
+    }
+
+    .container_menu .menu_container ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container_menu .menu_container ul li {
+        width: 100%;
+        padding-left: 25px;
+        border-bottom: 1px solid #fff;
+    }
+
 }
