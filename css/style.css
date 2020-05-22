@@ -206,8 +206,9 @@ main .filtro_container .container_picture #container div img {
 
     main .filtro_container .container_picture input {
         margin-top: 30px;
-        margin-left: 10px;
+        margin-left: 5px;
         margin-bottom: 30px;
+        font-size: 14px;
     }
 
     .container_menu .menu_container .menu {
