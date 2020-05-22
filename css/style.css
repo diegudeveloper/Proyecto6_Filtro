@@ -205,11 +205,14 @@ main .filtro_container .container_picture #container div img {
     }
 
     main .filtro_container .container_picture input {
+        width: 5%;
         margin-top: 30px;
         margin-left: 5px;
         margin-bottom: 30px;
         font-size: 14px;
+        /*text-align: center;*/
     }
+
 
     .container_menu .menu_container .menu {
         width: 100%;
