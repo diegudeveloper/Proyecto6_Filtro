@@ -108,12 +108,14 @@ main .filtro_container .container_picture input {
     margin-top: 50px;
     margin-left: 5%;
     margin-bottom: 50px;
+    display: inline-block;
 }
 
 
 main .filtro_container .container_picture {
     width: 100%;
     height: auto;
+    text-align: center;
 
 }
 
